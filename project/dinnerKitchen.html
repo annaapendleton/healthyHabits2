@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>idk</title>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script type="text/javascript" src="linkingScript.js"></script>
+  <script type="text/javascript" src="linkingScript2.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene">
+    <a-assests>
+      <a-asset-item id="kitchen-layout" src="models/kitchen/scene.gltf"></a-asset-item>
+      <a-asset-item id="chickenandveggies" src="models/healthyChicken/scene.gltf"></a-asset-item>
+      <a-asset-item id="milkMultiple" src="models/milk/scene.gltf"></a-asset-item>
+      <a-asset-item id="hamburgerandfries" src="models/mcdonalds/scene.gltf"></a-asset-item>
+       <a-asset-item id="milkMultiple2" src="models/milk/scene.gltf"></a-asset-item>
+       <a-asset-item id="giraffe-model" src="models/giraffe/scene.gltf"></a-asset-item>
+    </a-assests>
+
+    <a-camera position="0 30 43" rotation="0 -5 0">
+      <a-cursor>
+      </a-cursor>
+    </a-camera>
+    <a-entity id="kitchen">
+      <a-gltf-model id="kitchen-set" src="#kitchen-layout" visible="true" scale="0.05 0.05 0.05" position="0 -3 20"></a-gltf-model>
+      <a-gltf-model onclick="healthyBreakfast()"href="bedroomNight.html" id="healthyChicken" src="#chickenandveggies" visible="true" scale="0.1 0.1 0.1" position="18.775 24 4"></a-gltf-model>
+      <a-gltf-model id="mcdonalds" onclick="unhealthyBreakfast()" href="bedroomNight.html" src="#hamburgerandfries" visible="true" scale="9.7 9.7 9.7" position="-46 25 36" rotation="0 90 0"></a-gltf-model>
+      <a-gltf-model id="milk2" href="bedroomNight.html" onclick="healthyBreakfast()" src="#milkMultiple2" visible="true" scale="3 3 3" position="11.6 22.2 -2.5"></a-gltf-model>
+       <a-gltf-model id="giraffe" src="#giraffe-model" visible="true" scale="0.5 0.5 0.5" position="45 -10 35" rotation="0 -70 0"></a-gltf-model>
+    <!--  <a-entity id="Sleep-question" visible="false">-->
+    <!--    <a-text id="WakeUp" value="What time did you go to sleep last night?" color="black" visible=true position="0 1 -1" font="monoid" width="8" align="center" visible="true"></a-text>-->
+    <!--    <a-box id="7to8" color="white" height=".5" width="1.5" depth=".25" position="-3 0 -2">-->
+    <!--      <a-text value="7pm -8pm" color="black" position="0.5 -0.1 1" align="center"></a-text>-->
+    <!--    </a-box>-->
+    <!--    <a-box id="9to10" color="white" height=".5" width="1.5" depth=".25" position="0 0 -2">-->
+    <!--      <a-text value="9pm -10pm" color="black" position="0 -0.1 1" align="center"></a-text>-->
+    <!--    </a-box>-->
+    <!--    <a-box id="10ormore" color="white" height=".5" width="1.25" depth=".25" position="3 0 -2">-->
+    <!--      <a-text value="10pm +" color="black" position="-0.9 -0.1 1" alighn="center"></a-text>-->
+    <!--    </a-box>-->
+    <!--  </a-entity>-->
+     <a-entity id="speech">
+       
+       <a-entity id="speech">
+        <a-text value="Would you like eggs on toast and an orange for breakfast? Or would you like donuts with milk?" color="black" rotation="0 0 0" width="1.8" position="0.95 -0.08 2.0" align="center"></a-text>
+       
+      <a-gltf-model id="giraffe" src="#giraffe-model" visible="true" scale="0.5 0.5 0.5" position="45 -10 35" rotation="0 -70 0"></a-gltf-model>
+      <a-entity id="speech">
+        <a-cylinder color="white" radius="10"  height="1" position="45 50 20" rotation="90 120 0"></a-cylinder>
+        <a-cone color="white" radius-bottom="0.15" radius-top="1"  height="2" position="49 40 26" rotation="315 0 0"></a-cone>
+        <a-text value="Would you like chicken,\n vegetables, and rice?\n Or would you like\n McDonald's?" color="black" scale="20 20 20" visible="true" width="1.8" position="42.28 49 21.631" align="center" rotation="0 -60 0"></a-text>
+      </a-entity>
+      
+      <!--  <a-cylinder visible="true" color="white" height="1" radius="1.10" position="3.6 1 2.2" rotation="90 0 0">-->
+      <!--  </a-cylinder>-->
+      <!--  <a-text visible="true" value="Would you like chicken, vegetables, and rice? Or would you like McDonald's?" color="black" rotation="0 0 0" width="1.8" position="0.95 -0.08 2.0" align="center"></a-text>-->
+      <!--  <a-cone visible="true" color="white" radius-bottom="0.020" radius-top="0.2" height="0.6" position="4.7 0.6 2" rotation="0 0 50"></a-cone>-->
+      <!--</a-entity>-->
+    <!--  <a-entity id="speech">-->
+    <!--    <a-sphere color="white" radius="0.5" position="3 1 1"></a-sphere>-->
+    <!--    <a-cone color="white" radius-bottom="0.1" radius-top="0.5" position="3 -1 1"></a-cone>-->
+    <!--  </a-entity>-->
+    </a-entity>
+    <a-sky color="#f49542"></a-sky>
+    <a-plane color="green" height="100" width="100" rotation="-90 0 0" position="0 -3 0"></a-plane>
+
+  </a-scene>
+</body>
+
+</html>

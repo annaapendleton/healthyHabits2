@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bedroom</title>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script type="text/javascript" src="linkingScript.js"></script>
+  <script type="text/javascript" src="linkingScript2.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene">
+    <a-assests>
+      <a-asset-item id="bed-model" src="models/bed/scene.gltf"></a-asset-item>
+      <a-asset-item id="giraffe-model" src="models/giraffe/scene.gltf"></a-asset-item>
+      <a-asset-item id="clock-model" src="models/clock/scene.gltf"></a-asset-item>
+    </a-assests>
+
+    <a-camera position="0 -2.3 3">
+      <a-cursor>
+      </a-cursor>
+    </a-camera>
+    <a-entity id="bedroom">
+      <a-gltf-model onclick="clock()" id="clock" src="#clock-model"  visible="true" scale="0.5 0.5 0.5" position="0 0 1" rotation="0 0 0">
+        <a-animation attribute="rotation" begin="0" dur="1000" easing="linear" from="0 0 50" to="0 0 -50" direction="alternate" repeat="indefinite"></a-animation><a-text value="7:00" position="0 0 1" color="white" width="10" align="center"></a-text>
+      </a-gltf-model>
+      <a-gltf-model id="bed" src="#bed-model" visible="true" scale="0.5 0.5 0.5" position="0 -2 0.25" rotation="0 -90 4"></a-gltf-model>
+      <a-gltf-model id="giraffe" src="#giraffe-model" visible="true" scale="0.02 0.02 0.02" position="2.5 -2 1" rotation="0 -40 0"></a-gltf-model>
+      <a-entity id="Sleep-question" visible="false">
+        <a-text id="WakeUp" value="What time did you go to sleep last night?" color="black" visible=true position="0 1 -1" font="monoid" width="8" align="center" visible="true"></a-text>
+        <a-box id="7pm" href= "kitchen.html" onclick="onclick="sessionStorage.setItem('sleep', true)"  color="white" height=".5" width="1.5" depth=".25" position="-3 0 -2">
+          <a-text value="7pm -8pm" color="black" position="0.5 -0.1 1" align="center"></a-text>
+        </a-box>
+        <a-box id="9pm" href= "kitchen.html" onclick="sessionStorage.setItem('sleep', true)" color="white" height=".5" width="1.5" depth=".25" position="0 0 -2">
+          <a-text value="9pm -10pm" color="black" position="0 -0.1 1" align="center"></a-text>
+        </a-box>
+        <a-box id="10pm" href= "kitchen.html" onclick="sessionStorage.setItem('sleep', false)" color="white" height=".5" width="1.25" depth=".25" position="3 0 -2">
+          <a-text value="10pm +" color="black" position="-0.9 -0.1 1" alighn="center"></a-text>
+        </a-box>
+      </a-entity>
+      <a-entity id="speech">
+        <a-cylinder color="white" height="0.03" radius="0.55" position="1.8 0.5 1.1" rotation="90 0 0">
+        </a-cylinder>
+        <a-text value="Good morning!\n Touch the clock\n to wake up!" color="black" rotation="0 0 0" width="1.8" position="0.95 -0.08 2.0" align="center"></a-text>
+        <a-cone color="white" radius-bottom="0.005" radius-top="0.1" height="0.3" position="2.35 0.3 1" rotation="0 0 50"></a-cone>
+      </a-entity>
+    </a-entity>
+    <a-sky id="sky" color="#00124E"></a-sky>
+    <a-plane color="#8b5a2b" height="100" width="100" rotation="-90 0 0" position="0 -3 0"></a-plane>
+
+  </a-scene>
+</body>
+
+</html>

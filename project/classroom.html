@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Classroom</title>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script type="text/javascript" src="linkingScript.js"></script>
+  <script type="text/javascript" src="linkingScript2.js"></script>
+</head>
+
+<body onload="classroom()">
+  <a-scene id="scene" light="defaultLightsEnabled: false">
+    <a-assests>
+      <a-asset-item id="classroom-model" src="models/classroom/scene.gltf"></a-asset-item>
+      <a-asset-item id="giraffe-model" src="models/giraffe/scene.gltf"></a-asset-item>
+      <a-asset-item id="clock-model" src="models/clock/scene.gltf"></a-asset-item>
+    </a-assests>
+    <a-entity id="light" light="type: ambient; color: #CCC"></a-entity>
+    <a-camera position="0 -2.3 3" rotation="0 -180 0">
+      <a-cursor>
+      </a-cursor>
+    </a-camera>
+    <a-entity id="classroom">
+
+      <a-gltf-model id="classroom" src="#classroom-model" visible="true" scale="1 1 -1" position="0 1 0.1" rotation="0 0 0"></a-gltf-model>
+      <a-gltf-model id="giraffe" src="#giraffe-model" visible="true" scale="0.08 0.08 0.08" position="-6 -8 12" rotation="0 130 0"></a-gltf-model>
+    </a-entity>
+    <a-entity id="Sleep-statement" visible="true">
+      <a-text id="chalk" value="17+3=20\n 20-3=17\n 20-3=17" scale=".65 .65 .65" color="white" rotation="0 -180 0" position=".1 0.7 9" font="monoid" width="10" align="center" visible="true"></a-text>
+    </a-entity>
+     <a-text id="classSpeak" value="Great job in class!\n You got enough sleep\n so you were able to \n  pay attention in school!" visible="true" color="black" rotation="0 180 0" width="7" position="-8 2 10" align="center"></a-text>
+     <a-entity id="speech">
+        <a-cylinder color="white" height="0.03" radius="2.7"  position="-9 2 11" rotation="90 0 0">
+        </a-cylinder>
+       
+        <a-cone color="white" radius-bottom="0.5" radius-top="0.1" height="0.7" position="-6 1 11" rotation="180 180 60"></a-cone>
+      </a-entity>
+    <a-entity id="clock" visible="false">
+      <a-gltf-model src="#clock-model" scale="1.75 1.75 1.75" position="0 -1.3 8" rotation="0 -180 0" href="cafeteria.html">
+        <a-animation attribute="rotation" begin="0" dur="1000" easing="linear" from="0 -180 50" to="0 -180 -50" direction="alternate" repeat="indefinite"></a-animation>
+        <a-text value="Lunch\n Time" color="cyan" position="-0.08 0 1" align="center" width="6"></a-text>
+      </a-gltf-model>
+    </a-entity>
+    <!--<a-box id="9pm" href= "kitchen.html" color="white" height=".5" width="2.25" depth=".25" position="0 -1 6">-->
+    <!--    <a-text value="9pm -10pm" color="black" position="0 -1.1 9" align="center"></a-text>-->
+    <!--  </a-box>-->
+
+    <!--<a-box id="10pm" color="white" height=".5" width="2.25" depth=".25" position="0 -1 6">-->
+    <!--      <a-text value="go to lunch" color="black" position="0 1 4" align="center"></a-text>-->
+    <!--    </a-box>-->
+    <a-sky color="#09525C"></a-sky>
+
+  </a-scene>
+</body>
+
+</html>
+

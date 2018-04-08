@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bedroom</title>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+  <script type="text/javascript" src="linkingScript.js"></script>
+  <script type="text/javascript" src="linkingScript2.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene">
+    <a-assests>
+      <a-asset-item id="bed-model" src="models/bed/scene.gltf"></a-asset-item>
+      <a-asset-item id="giraffe-model" src="models/giraffe/scene.gltf"></a-asset-item>
+      <a-asset-item id="clock-model" src="models/clock/scene.gltf"></a-asset-item>
+    </a-assests>
+
+    <a-camera position="0 -2.3 3">
+      <a-cursor>
+      </a-cursor>
+    </a-camera>
+    <a-entity id="bedroom">
+      <a-gltf-model id="bed" src="#bed-model" visible="true" scale="0.5 0.5 0.5" position="0 -2 0.25" rotation="0 -90 4"></a-gltf-model>
+      <a-gltf-model id="giraffe" src="#giraffe-model" visible="true" scale="0.02 0.02 0.02" position="2.5 -2 1" rotation="0 -40 0"></a-gltf-model>
+            <a-entity id="speech">
+        <a-cylinder color="white" height="0.03" radius="0.55" position="1.8 0.5 1.1" rotation="90 0 0">
+        </a-cylinder>
+        <a-text value="Good night!\n I can't wait to\n learn more\n healthy\n habits \ntomorrow!" color="black" rotation="0 0 0" width="1.7" position="0.95 -0.08 2.0" align="center"></a-text>
+        <a-cone color="white" radius-bottom="0.005" radius-top="0.1" height="0.3" position="2.35 0.3 1" rotation="0 0 50"></a-cone>
+      </a-entity>
+    </a-entity>
+    <a-sky id="sky" color="#000033"></a-sky>
+    <a-plane color="#8b5a2b" height="100" width="100" rotation="-90 0 0" position="0 -3 0"></a-plane>
+<a-sphere color="#ffffcc" position="0 0 0.5" radius="0.5" href="/HealthyHabits/html5up-identity/index.html">
+  <a-text value="Return \nHome" position="0 -0.2 1" color="black" width="3" align="center"></a-text>
+   <a-animation attribute="position" begin="0" dur="2000" easing="linear" from="0 0 0.5" to="0 0.1 0.5" direction="alternate" repeat="indefinite"></a-animation>
+</a-sphere>
+  </a-scene>
+</body>
+
+</html>
